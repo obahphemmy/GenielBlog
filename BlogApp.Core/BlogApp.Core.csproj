@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Our.Umbraco.Community.Contentment" Version="4.4.5" />
+    <PackageReference Include="Umbraco.Cms.Core" Version="12.1.1" />
+    <PackageReference Include="Umbraco.Cms.Web.Common" Version="12.1.1" />
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="12.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlogApp.Umbraco.Models\BlogApp.Umbraco.Models.csproj" />
+  </ItemGroup>
+
+</Project>

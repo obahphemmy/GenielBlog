@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BlogApp.Core.ViewModels.PostViewModel>
+
+<section class="banner-section">
+	<div class="banner-slider">
+		@foreach (var post in Model.ToList())
+		{
+			<div class="sinlge-banner">
+				<div class="banner-wrapper">
+					<div class="banner-bg" style="background-image: url(@post.ImageUrl);"></div>
+					<div class="banner-content" data-animation="fadeInUp" data-delay="0.3s">
+						<h3 class="title" data-animation="fadeInUp" data-delay="0.6s">
+							<a href="#">
+								@post.Title
+							</a>
+						</h3>
+						<ul class="meta" data-animation="fadeInUp" data-delay="0.8s">
+							<li><a href="#">By - @post.AuthorName</a></li>
+							<li>
+								@{
+									if (post.Categories != null && post.Categories.Any())
+									{
+										//var endOfList = false;
+										//var counter = 0;
+										//var totalItems = post.Categories.Count();
+										foreach (var item in post.Categories)
+										{
+											<a href="#">@item.CategoryName </a>
+										}
+									}
+								}
+							</li>
+						</ul>
+						<p data-animation="fadeInUp" data-delay="1s">
+							@post.Absract
+						</p>
+						<a href="@post.PostUrl" class="read-more" data-animation="fadeInUp" data-delay="1.2s">
+							Read More <i class="fas fa-long-arrow-right"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+	<div class="banner-nav"></div>
+</section>

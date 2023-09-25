@@ -1,0 +1,16 @@
+﻿@model PublishedElementViewModel<SidebarCategoryLimit, SidebarCategoriesViewModel>
+
+<div class="categories">
+
+@{
+    foreach (var item in Model.ViewModel.Categories)
+    {
+        <div class="categorie" style="background-image: url(@item.CategoryImageUrl); background-position:center;">
+            <a href="#">
+                @item.CategoryName
+            </a>
+        </div>
+    }
+}
+</div>
+

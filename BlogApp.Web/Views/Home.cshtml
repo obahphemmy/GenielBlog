@@ -1,0 +1,27 @@
+﻿@model ComposedPageViewModel<Home, HomeViewModel>
+@{
+	Layout = "Master.cshtml";
+}
+
+
+
+<!--====== Banner Area Start ======-->
+@await Component.InvokeAsync("BannerArea", Model.CustomViewModel.BannerPosts);
+<!--====== Banner Area End ======-->
+<!--====== Post Area Start ======-->
+<section class="post-area with-sidebar" id="postWarpperLoaded">
+	<div class="container container-1250">
+		<div class="post-area-inner">
+
+			@await Component.InvokeAsync("PostArea", Model.CustomViewModel.EntryPosts)
+
+			@*@await Component.InvokeAsync("SidebarArea")*@
+			<div class="primary-sidebar clearfix">
+				<div class="sidebar-masonary row justify-content-center">
+					@Html.GetBlockListHtml(Model.UmbracoPage.SidebarComponentArea)
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--====== Post Area End ======-->

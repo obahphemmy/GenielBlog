@@ -1,0 +1,18 @@
+﻿@*@model Umbraco.Cms.Web.Common.PublishedModels.BloggerProfile
+
+<div class="primary-sidebar clearfix">
+	<div class="sidebar-masonary row justify-content-center">
+		<div class="col-lg-12 col-md-6 col-sm-8 widget author-widget">
+			<div class="author-img">
+				<img src="@Model.ProfileImage?.GetCropUrl(139, 139)" alt="Post-Author">
+			</div>
+			<h5 class="widget-title">I am a Blogger</h5>
+			<p>
+				@Model.BioInfo
+			</p>
+			<div class="author-signature">
+				<img src="@Model.ESignature?.Url()" alt="Signature">
+			</div>
+		</div>
+	</div>
+</div>*@
