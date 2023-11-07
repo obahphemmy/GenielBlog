@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flagging", "Flagging\Flagging.csproj", "{83D94A44-4015-4118-BA68-32E6E9E3266D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flagging.Data", "Flagging.Data\Flagging.Data.csproj", "{F0435C04-F4B2-4415-8D8B-9099A156553D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83D94A44-4015-4118-BA68-32E6E9E3266D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83D94A44-4015-4118-BA68-32E6E9E3266D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83D94A44-4015-4118-BA68-32E6E9E3266D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83D94A44-4015-4118-BA68-32E6E9E3266D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0435C04-F4B2-4415-8D8B-9099A156553D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0435C04-F4B2-4415-8D8B-9099A156553D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0435C04-F4B2-4415-8D8B-9099A156553D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0435C04-F4B2-4415-8D8B-9099A156553D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D02EB47-2179-48B3-A7AD-6B14DC157EA6}
+	EndGlobalSection
+EndGlobal
