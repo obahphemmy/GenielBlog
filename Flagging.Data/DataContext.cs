@@ -16,8 +16,29 @@ namespace Flagging.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<Flag>()
+                .HasKey(fi => fi.Id);
+
+            modelBuilder.Entity<Flag>()
+                .HasOne(fi => fi.Article)
+                .WithMany(a => a.ReportFlags)
+                .HasForeignKey(fi => fi.ItemId)
+                .HasPrincipalKey(a => a.Id);
+
+            modelBuilder.Entity<Flag>()
+                .HasOne(fi => fi.Comment)
+                .WithMany(c => c.ReportFlags)
+                .HasForeignKey(fi => fi.ItemId)
+                .HasPrincipalKey(c => c.Id);
+
+            modelBuilder.Entity<Flag>()
+                .HasOne(fi => fi.ReportedUser)
+                .WithMany(u => u.ReportFlags)
+                .HasForeignKey(fi => fi.ItemId)
+                .HasPrincipalKey(u => u.Id);
+
+            base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<User>().HasData(UsersSeed());
             modelBuilder.Entity<Article>().HasData(ArticleSeed());
@@ -75,7 +96,7 @@ namespace Flagging.Data
                     yield return new Flag
                     {
                         Id = j++,
-                        ArticleId = i,
+                        ItemId = i,
                         Type = FlaggedContentType.Article,
                         DateCreated = Faker.Identification.DateOfBirth(),
                     };
@@ -89,7 +110,7 @@ namespace Flagging.Data
                     yield return new Flag
                     {
                         Id = j++,
-                        CommentId = i,
+                        ItemId = i,
                         Type = FlaggedContentType.Comment,
                         DateCreated = Faker.Identification.DateOfBirth(),
                     };
@@ -103,7 +124,7 @@ namespace Flagging.Data
                     yield return new Flag
                     {
                         Id = j++,
-                        ReportedUserId = i,
+                        ItemId = i,
                         Type = FlaggedContentType.Member,
                         DateCreated = Faker.Identification.DateOfBirth(),
                     };

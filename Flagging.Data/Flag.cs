@@ -11,7 +11,7 @@ namespace Flagging.Data
 
         public Flag(Article article) : this()
         {
-            ArticleId = article.Id;
+            ItemId = article.Id;
             Article = article;
             Type = FlaggedContentType.Article;
         }
@@ -19,22 +19,20 @@ namespace Flagging.Data
         public Flag(Comment comment) : this()
         {
             Comment = comment;
-            CommentId = comment.Id;
+            ItemId = comment.Id;
             Type = FlaggedContentType.Comment;
         }
 
         public Flag(User user) : this()
         {
-            ReportedUserId = user.Id;
+            ItemId = user.Id;
             ReportedUser = user;
             Type = FlaggedContentType.Member;
         }
 
         public int Id { get; set; }
 
-        public int? ReportedUserId { get; set; }
-        public int? ArticleId { get; set; }
-        public int? CommentId { get; set; }
+        public int? ItemId { get; set; }
 
         public FlaggedContentStatus Status { get; set; }
         public FlaggedContentType Type { get; set; }
@@ -53,11 +51,11 @@ namespace Flagging.Data
                 switch (Type)
                 {
                     case FlaggedContentType.Article:
-                        return ArticleId.Value;
+                        return ItemId.Value;
                     case FlaggedContentType.Comment:
-                        return CommentId.Value;
+                        return ItemId.Value;
                     case FlaggedContentType.Member:
-                        return ReportedUserId.Value;
+                        return ItemId.Value;
                 }
                 return 0;
             }
